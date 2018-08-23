@@ -12,7 +12,7 @@
         "drupal/reroute_email": "^1.0",
         "drupal/stage_file_proxy": "^1.0",
         "drush/drush": "^8.1.15",
-        "oh17l/draft-environment": "2.x-dev"
+        "oh17l/draft-environment": "^2.5.0"
     },
     "require": {
         "composer/installers": "^1.3",
