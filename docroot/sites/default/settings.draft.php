@@ -8,13 +8,15 @@ use Drupal\Component\Serialization\Yaml;
  * composer script.
  */
 
+$vm_settings = Yaml::decode(file_get_contents($app_root . '/../vm-settings.yml'));
+
 // Set up default database.
 $databases['default']['default'] = [
   'database' => 'drupal',
   'username' => 'drupal',
   'password' => 'drupal',
   'prefix' => '',
-  'host' => 'localhost',
+  'host' => $vm_settings['environment_type'] === 'vagrant' ? 'localhost' : 'mariadb',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
@@ -35,8 +37,6 @@ $settings['file_private_path'] = 'sites/default/files/private';
  *   - default domain (<vagrant.hostname>.test)
  *   - host aliases (<vagrant.host_aliases>)
  */
-
-$vm_settings = Yaml::decode(file_get_contents($app_root . '/../vm-settings.yml'));
 
 $settings['trusted_host_patterns'] = [];
 // Default domain.
