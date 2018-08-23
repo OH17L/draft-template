@@ -6,6 +6,14 @@ This is a [Composer](https://getcomposer.org)-based installer for the [Draft](ht
 
 - PHP 5.6+: http://php.net/downloads.php
 - Composer: https://getcomposer.org/download/
+
+### Docker
+
+- Docker 18+
+- docker-compose 1.21+
+
+### Vagrant
+
 - NFS server:
   * Windows: will be automatically installed with Vagrant WinNFSd plugin
   * MacOS: has built-in support
@@ -18,7 +26,7 @@ This is a [Composer](https://getcomposer.org)-based installer for the [Draft](ht
 Run this command:
 
 ```
-$ composer create-project --ignore-platform-reqs oh17l/draft-template my_awesome_project
+$ composer create-project --ignore-platform-reqs oh17l/draft-template:1.x-dev my_awesome_project
 ```
 
 Composer will create a new directory called `my_awesome_project` containing everything you need to get started.
